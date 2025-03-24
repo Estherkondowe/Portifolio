@@ -77,11 +77,14 @@
 
         <P>You can also reach out by filling the contact form below </P>
         <div>
-        <form action="https:httpbin.org/get" method="get">
+        <form action="https:httpbin.org/get" method="get" novalidate>
+
             <label for="name">Name:</label>
             <input type="text"  id="name" name="Name" required><br><br>
-            <label id="Email">Email:</label> 
+
+            <label for="email">Email:</label> 
             <input type="text" id="email" name="Email" required><br><br>
+
             <label for="message">Message</label>  
             <textarea id="message" name="message" rows="4" required>
 
@@ -97,5 +100,6 @@
     <footer>
         <p>&copy;2025 Esther. All rights reseved.</p>
     </footer>
+    <script src="index.js"></script>
     </body>
 </html>
