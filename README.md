@@ -7,6 +7,6 @@ Welcome to my portfolio! This project simply showcases my skills , projects  and
  Technologies used 
   HTML, CSS, JavaScript, Git/GitHub
 
-  Feel free to contact me through my Email Komdoweesther2@gmail.com 
+  Feel free to contact me through my Email Kondoweesther2@gmail.com 
 
 
