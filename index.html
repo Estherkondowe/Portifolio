@@ -4,29 +4,36 @@
         <title>Esthers Portifolio</title>
         <meta charset="UTF-8">
         <meta content="Author" name="Esther kondowe">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <header>
-          <img src="pics/Esther kondowe.png" alt="logo" id="logo">
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+          <div  class="navbar">
+            <nav>
+                <img src="pics/Esther kondowe.png" alt="logo" id="logo">
+                
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+          </div>
+        
     </header>
     <section id="home">
-        <h1>Hello! I'm Esther</h1>
-        <h3>An aspiring  Full stack developer/ IT student at MUBAS</h3>
+        
+        <h1> Hie! I'm &nbsp;<span id ="name"></span> </h1>
+        <!--<h3 >An aspiring  Full stack developer/ IT student at MUBAS</h3>-->
         <img src="pics/Esther.jpg" title="my-picture" alt="Picture of me" width="290" height="300">
     </section>   
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm an IT student at Malawi University of Business and Applied Science, passionate about full stack web development,&nbsp;Cybersecurity and problem-solving. Right now am sharpenining my skills in JavaScript, HTML and CSS through Code Blossom. I have also explored networking and Cybersecurity,even earning a Cybersecurity badge from Cisco. Outside of coding I love learning new things and engaging with tech communities.My goal is to build meaningful digital solutions while continously growing as a developer.  </p>
+        <p>I'm an IT student at Malawi University of Business and Applied Science, passionate about fullstack web development, Cybersecurity and problem-solving.Currently am sharpenining my skills in JavaScript, HTML and CSS through Code Blossom. I have also explored networking and Cybersecurity,even earning a Cybersecurity badge from Cisco. Outside of coding I love learning new things and engaging with tech communities. My goal is to build meaningful digital solutions while continously growing as a developer.</p>
     </section>
     <section id="skills">
         <h2>My Skills</h2>
@@ -55,15 +62,23 @@
     </section>
     <section id="projects">
         <h2>My Projects</h2>
-        <div class="projects">
+
+        <div class="f-Buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="website">Websites</button>
+            <button class="filter-btn" data-filter="app">Apps</button>
+        </div>
+
+        <div class="projects" data-category="website">
         <h3> HerTechjourney website</h3>
         <p>This is a website i created as a way of empowering  ladies that have passion in Tech to be motivated by seeing what other ladies are doing in Tech</p>
-        <a href="https://sites.google.com/mubas.ac.mw/hertechjourney-com">View HerTechjourney website</a>
+        <a href="https://sites.google.com/mubas.ac.mw/hertechjourney-com">View Project</a>
       </div>
-      <div class="projects">
+
+      <div class="projects" data-category="app">
         <h3>To-do web app</h3>
         <p>A simple JavaScript-based task manager that allows users to add, edit, and delete tasks.</p>
-        <a href="alert.html">View the To-do web app</a>
+        <a href="alert.html">View Project</a>
       </div>
     </section>
     <section id="contact">
@@ -80,7 +95,7 @@
         <form action="https:httpbin.org/get" method="get" novalidate>
 
             <label for="name">Name:</label>
-            <input type="text"  id="name" name="Name" required><br><br>
+            <input type="text"  id="namee" name="Name" required><br><br>
 
             <label for="email">Email:</label> 
             <input type="text" id="email" name="Email" required><br><br>
@@ -100,6 +115,5 @@
     <footer>
         <p>&copy;2025 Esther. All rights reseved.</p>
     </footer>
-    <script src="index.js"></script>
+    <script  src="index.js"> </script>
     </body>
-</html>
