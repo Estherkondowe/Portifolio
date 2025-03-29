@@ -57,7 +57,7 @@ nav ul li a{
 nav ul li a:hover{
     color: rgb(121, 77, 0);
 }
-#name{
+#myname{
     color:rgb(233, 135, 8) ;
 }
 #home{
@@ -309,6 +309,6 @@ html{
 }
 .error-message {
     color: red;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size:14px;
+    margin-top:5px;
 }

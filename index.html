@@ -7,9 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="index.css">
+    <script  src="index.js" defer></script>
+
     </head>
     <body>
         <header>
+    
           <div  class="navbar">
             <nav>
                 <img src="pics/Esther kondowe.png" alt="logo" id="logo">
@@ -27,7 +30,7 @@
     </header>
     <section id="home">
         
-        <h1> Hie! I'm &nbsp;<span id ="name"></span> </h1>
+        <h1> Hie! I'm &nbsp;<span id ="myname"></span> </h1>
         <!--<h3 >An aspiring  Full stack developer/ IT student at MUBAS</h3>-->
         <img src="pics/Esther.jpg" title="my-picture" alt="Picture of me" width="290" height="300">
     </section>   
@@ -35,6 +38,8 @@
         <h2>About Me</h2>
         <p>I'm an IT student at Malawi University of Business and Applied Science, passionate about fullstack web development, Cybersecurity and problem-solving.Currently am sharpenining my skills in JavaScript, HTML and CSS through Code Blossom. I have also explored networking and Cybersecurity,even earning a Cybersecurity badge from Cisco. Outside of coding I love learning new things and engaging with tech communities. My goal is to build meaningful digital solutions while continously growing as a developer.</p>
     </section>
+
+    <!--My skills section code -->
     <section id="skills">
         <h2>My Skills</h2>
         <div>
@@ -60,6 +65,7 @@
             </ul>
         </div>
     </section>
+    <!--project section html code-->
     <section id="projects">
         <h2>My Projects</h2>
 
@@ -81,6 +87,10 @@
         <a href="alert.html">View Project</a>
       </div>
     </section>
+
+
+
+    <!--Contact section code-->
     <section id="contact">
         <h2>Contact</h2>
         <p>If you'd like to connect, feel free to reach out through the following;</p>
@@ -92,28 +102,32 @@
 
         <P>You can also reach out by filling the contact form below </P>
         <div>
-        <form action="https:httpbin.org/get" method="get" novalidate>
+        <form  id="Contactform"action="https:httpbin.org/get" method="get" novalidate>
 
             <label for="name">Name:</label>
-            <input type="text"  id="namee" name="Name" required><br><br>
+            <input type="text"  id="name" name="Name" required><br><br>
+            <span id="nameError" class="error-message"></span><br>
 
             <label for="email">Email:</label> 
             <input type="text" id="email" name="Email" required><br><br>
+            <span id="emailError" class="error-message" ></span><br>
+
 
             <label for="message">Message</label>  
-            <textarea id="message" name="message" rows="4" required>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <span id="messageError" class="error-message"></span><br>
 
-            </textarea><br><br>
 
             <button type="submit">Send Message</button>
+            <div id="errorMessages"></div>
+       
         </form>
         </div>
     </section>
-
+<!--back to the top button-->
         <a href="#" class="back-to-the-top">Back to the top</a>
    
     <footer>
         <p>&copy;2025 Esther. All rights reseved.</p>
     </footer>
-    <script  src="index.js"> </script>
     </body>

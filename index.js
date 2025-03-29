@@ -1,81 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+                // implementation of typing effect
+                const textE =document.querySelector('#myname');
 
-                const form = document.querySelector('form');
-            
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault(); // Prevent form submission
-                    clearErrors();
-            
-                    const isNameValid = validateName();
-                    const isEmailValid = validateEmail();
-                    const isMessageValid = validateMessage();
-            
-                    if (isNameValid && isEmailValid && isMessageValid) {
-                        alert('Form submitted successfully!');
-                        form.submit(); 
-                    }
-            
-                });
-            
-            
-                function validateName() {
-                    const nameInput = document.getElementById('name');
-                    const nameValue = nameInput.value.trim();
-                    
-                    if (nameValue === '') { 
-                        showError(nameInput, 'Please enter your name');
-                        return false;
-                    }
-                    return true;
-                }
-            
-                function validateEmail() {
-                    const emailInput = document.getElementById('email');
-                    const emailValue = emailInput.value.trim();
-                    
-                    if (emailValue === '') { 
-                        showError(emailInput, 'Please enter your email address');
-                        return false;
-                    } else if (!isValidEmail(emailValue)) {
-                        showError(emailInput, 'Please enter a valid email address');
-                        return false;
-                    }
-                    return true;
-                }
-            
-                function validateMessage() {
-                    const messageInput = document.getElementById('message');
-                    const messageValue = messageInput.value.trim();
-                    console.log('Message value:', messageValue); 
-            
-                    if (messageValue === '') {
-                        showError(messageInput, 'Please enter a message');
-                        return false;
-                    }
-                    return true;
-                }
-            
-                function isValidEmail(email) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return emailRegex.test(email);
-                }
-            
-                function showError(input, message) {
-                    const errorDiv = document.createElement('div');
-                    errorDiv.className = 'error-message';
-                    errorDiv.textContent = message;
-                    errorDiv.style.color = 'red';
-                    errorDiv.style.fontSize = '14px';
-                    errorDiv.style.marginTop = '5px';
-                    input.parentNode.insertBefore(errorDiv, input.nextSibling);
-                }
-            
-                function clearErrors() {
-                    const errorMessages = document.querySelectorAll('.error-message');
-                    errorMessages.forEach(error => error.remove());
-                }
-                const textE =document.querySelector('#name');
                 const words = ['Esther Kondowe','An aspiring Fullstack Developer' , 'also an Information Technology Student at Malawi University of Business and Applied Sciences'].map(word=> word +'.');
         
 
@@ -133,6 +60,8 @@ const typeRun=()=>{
 }
 setTimeout(typeRun,1500)
 
+// code for  filltering projects
+
 const filterButtons = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.projects');
 
@@ -142,13 +71,73 @@ const filterButtons = document.querySelectorAll('.filter-btn');
             const filter = button.dataset.filter;
             projects.forEach(project => {
               if (filter ==='all' || project.dataset.category === filter) {
-                project.style.display = 'block'; // Show
+                project.style.display = 'block'; 
               } else {
-                project.style.display = 'none'; // Hide
+                project.style.display = 'none'; 
               }
             });
           });
         });
+        
+
+      // below is my code on form validation
+    document.getElementById('Contactform').addEventListener('submit', function(event) { 
+    event.preventDefault(); 
+
+
+    document.querySelectorAll('.error-message').forEach(error => error.innerHTML = '');
+
+    
+    let form = document.getElementById('Contactform');
+
+    
+    let nameInput = document.getElementById('name');
+    let emailInput = document.getElementById('email');
+    let messageInput = document.getElementById('message');
+
+
+    let name = nameInput.value.trim();
+    let email = emailInput.value.trim();
+    let message = messageInput.value.trim();
+    let hasErrors = false;
+
+    
+    if (name === '') {
+        document.getElementById('nameError').innerHTML = 'Name is required.';
+        hasErrors = true;
+    }
+
+    if (email === '') {
+        document.getElementById('emailError').innerHTML = 'Email is required.';
+        hasErrors = true;
+    } else if (!validateEmail(email)) {
+        document.getElementById('emailError').innerHTML = 'Email is not valid.';
+        hasErrors = true;
+    }
+
+    
+    if (message === '') {
+        document.getElementById('messageError').innerHTML = 'Message is required.';
+        hasErrors = true;
+    }
+
+
+    if (!hasErrors) {
+        alert('Form submitted successfully!');
+        form.reset(); 
+
+        nameInput.value = '';
+        emailInput.value = '';
+        messageInput.value = '';
+    }
+});
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+        
            
      })
-     
+  
